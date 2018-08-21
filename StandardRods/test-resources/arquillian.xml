@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<arquillian
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://jboss.org/schema/arquillian"
+        xsi:schemaLocation="http://jboss.org/schema/arquillian
+                http://jboss.org/schema/arquillian/arquillian_1_0.xsd">
+    <!--
+    <engine>
+        <property name="deploymentExportPath">target/</property>
+    </engine>
+    -->
+
+    <container qualifier="wls-remote" default="true">
+        <configuration>
+            <property name="wlHome">C:\wls12210\wlserver</property>
+            <property name="adminUrl">t3://localhost:7001</property>
+            <property name="adminUserName">admin</property>
+            <property name="adminPassword">welcome1</property>
+            <property name="target">myserver</property>
+
+        </configuration>
+    </container>
+
+    <container qualifier="wls-remote-dev" default="false">
+        <configuration>
+            <property name="wlHome">C:\wls12210\wlserver</property>
+            <property name="adminUrl">t3://usnowebldev01:7001</property>
+            <property name="adminUserName">weblogicdev</property>
+            <property name="adminPassword">weblogicdev</property>
+            <property name="target">AdminServer</property>
+
+        </configuration>
+    </container>
+
+    <container qualifier="wls-remote-rest" default="false">
+        <configuration>
+            <property name="adminUrl">http://localhost:7001</property>
+            <property name="adminUserName">admin</property>
+            <property name="adminPassword">welcome1</property>
+            <property name="target">myserver</property>
+
+        </configuration>
+    </container>
+
+    <container qualifier="wls-remote-rest-dev" default="false">
+        <configuration>
+            <property name="adminUrl">http://usnowebldev01:7001</property>
+            <property name="adminUserName">weblogicdev</property>
+            <property name="adminPassword">weblogicdev</property>
+            <property name="target">AdminServer</property>
+
+        </configuration>
+    </container>
+    <container qualifier="weblogic" default="false">
+        <configuration>
+            <property name="wlHome">C:\wls12210\wlserver</property>
+            <property name="middlewareHome">C:\wls12210\wlserver</property>
+            <property name="domainDirectory">C:\wls12210\domains\mydomain</property>
+            <property name="allowConnectingToRunningServer">true</property>
+
+
+            <!--<property name="wlHome">WL_HOME=C:\wls12210\domains\mydomain</property> -->
+            <property name="adminUrl">t3://localhost:7001</property>
+            <property name="adminUserName">admin</property>
+            <property name="adminPassword">welcome1</property>
+            <property name="target">myserver</property>
+        </configuration>
+    </container>
+</arquillian>
